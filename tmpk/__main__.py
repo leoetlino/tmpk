@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
 # Copyright 2018 leoetlino <leo@leolam.fr>
-# Licensed under MIT
-
+# Licensed under GPLv2+
 import argparse
 import io
 import os
@@ -11,7 +9,7 @@ import struct
 import sys
 import typing
 
-import tmpk
+from . import tmpk
 
 def tmpk_extract(args) -> None:
     archive_path = Path(args.tmpk)
@@ -127,7 +125,7 @@ def tmpk_test_repack(args) -> None:
 
     print('ok')
 
-if __name__ == "__main__":
+def main() -> None:
     parser = argparse.ArgumentParser(description='Tool to manipulate TMPK archives.')
 
     subparsers = parser.add_subparsers(dest='command', help='Command')
