@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tmpk",
-    version="1.0.0",
+    version="1.1.0",
     author="leoetlino",
     author_email="leo@leolam.fr",
     description="Library and tool for Nintendo's TMPK archive format",
