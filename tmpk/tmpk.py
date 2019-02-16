@@ -39,7 +39,7 @@ class Tmpk:
         offsets: list = []
         for name, file in self._files.items():
             offsets.append((name, file.offset))
-        return sorted(offsets, key=itemgetter(1))
+        return sorted(offsets)
 
     def guess_default_alignment(self) -> int:
         if len(self._files) <= 2:
