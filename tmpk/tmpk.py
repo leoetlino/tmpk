@@ -84,12 +84,11 @@ class TmpkWriter:
         del self._files[name]
 
     def _get_alignment_for_file(self, file: File) -> int:
-        if file.name.endswith('.gmx'):
+        extension = Path(file.name).suffix
+        if extension == '.gmx':
             return 0x40
-        # This might be overkill in some cases, but bigger archives aren't a problem.
-        # Better be safe than sorry.
-        if file.name.endswith('.gtx'):
-            return 0x2000
+        if extension == '.gtx':
+            return 0x1000
         return self._default_alignment
 
     def get_file_offsets(self) -> typing.List[typing.Tuple[str, int]]:
